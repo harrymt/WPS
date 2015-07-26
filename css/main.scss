@@ -4,9 +4,14 @@
 // of the t shirt. Right column holds the t shirt picture.
 //
 
-$colour-background: #e0e0f0;
-$colour-text: #fff; // TODO unused
-$colour-panel: #000; // TODO unused
+$colour-background: #fff;
+$colour-panel: #A5FFD6;
+$colour-banner: #84DCC6;
+$colour-text: #222;
+
+.right {
+  float: right;
+}
 
 body {
   background-color: $colour-background;
@@ -15,41 +20,27 @@ body {
 }
 
 .wrapper {
-  background-color: #fff;
-  border: 2px double #000;
-  color: #000;
+  background-color: $colour-panel;
+  color: $colour-text;
   margin: auto;
   min-width: 1000px;
   width: 80%;
 }
 
-header {
-  border-bottom: 2px double #000;
-  color: #000;
+header,
+footer {
+  background-color: $colour-banner;
+  border: 2px double $colour-banner;
+  color: $colour-text;
   text-align: center;
 }
 
-/* This is the left column containing buttons
-  and colour altering properties */
-#leftcolumn {
-  float: left;
-  padding: 10px;
-  position: relative;
-}
-
-/* Right hand side, with the t shirt picture */
-#rightcolumn {
-  float: right;
-  padding: 10px;
-  position: relative;
+header {
+    font-size: 20px;
 }
 
 footer {
-  background-color: #e038ad;
-  border-top: 2px double #000;
-  clear: both;
-  color: #000;
-  font-size: xx-small;
+  font-size: 10px;
   font-style: italic;
   padding: 20px 0;
   text-align: center;
@@ -61,7 +52,7 @@ footer {
 .shirtText {
   bottom: 220px;
   height: 20px;
-  left: 150px;
+  left: 128px;
   position: relative;
   text-align: center;
   white-space: pre;
@@ -79,8 +70,6 @@ footer {
 
 /* T shirt picture  */
 .tShirt {
-  height: 300px;
   margin: 40px;
   position: relative;
-  width: 350px;
 }

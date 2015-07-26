@@ -67,12 +67,13 @@
   </script>
 </head>
 <body>
-  <div id="container">
+<div class="wrapper">
     <header>
-        <h3>Amazing a Tees</h3>
+        <h3>Amazing Tees</h3>
     </header>
+
     <div id="leftcolumn">
-        <form action="index.html">
+        <form action="index.php">
             <p>
                 <table border="1" summary="Order quantity">
                     <tr>

@@ -7,11 +7,12 @@
 <body>
     <div class="wrapper">
         <header>
-            <h3>Amazing a Tees</h3>
+            <h3>Amazing Tees</h3>
         </header>
 
-        <div id="rightcolumn">
-            <img alt="T-Shirt" class="tShirt" id="tShirt" name="tShirt" src="img/tShirt.png"> <img alt="" class="pic" height="80" id="pic" name="pic" src="null" width="60">
+        <section class="right">
+            <img height="250px;" width="300px;" class="tShirt" id="js-tShirt" name="tShirt" style="background:url(img/tShirt.png)">
+            <img class="pic" height="80" id="pic" name="pic" src="null" width="60">
 
             <table summary="Shirt text">
                 <tr>
@@ -20,9 +21,9 @@
                     </td>
                 </tr>
             </table>
-        </div>
+        </section>
 
-        <div id="leftcolumn">
+        <section>
             <form action="basket.php" method="get">
 
                 <p>Select a shirt colour
@@ -155,7 +156,7 @@
                     <input onclick="return validateOrder();" type="submit" value="Place order">
                 </p>
             </form>
-        </div>
+        </section>
 
         <?php @include 'templates/footer.php' ?>
     </div>
