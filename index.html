@@ -1,17 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!doctype html>
 
 <html>
 <head>
-    <meta content="ext/html; charset=utf-8" http-equiv="Content-Type">
+   <meta charset="utf-8">
+    <meta name="description" content="Create your own T-Shirt design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>T shirt design</title>
-    <link href="css/shop.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript">
-    
+
+    <link href="css/shop.css" rel="stylesheet">
+
+    <script>
+
     function printShirt() {
+
       // Change the colour of the t-shirt
       var colList = document.getElementById("colourList");
+
       document.getElementById("tShirt").style.backgroundColor = colList.options[colList.selectedIndex].value;
 
       // if nothing has been selected then change the picture
@@ -61,7 +66,6 @@
     }
     </script>
 </head>
-
 <body>
     <div id="container">
         <div id="header">
@@ -84,188 +88,141 @@
 
         <div id="leftcolumn">
             <form action="basket.php" method="get">
-                <p>Select a shirt colour: <select id="colourList" name=
-                "shirtColour" onchange="printShirt()">
-                    <option value="White">
-                        White
-                    </option>
 
-                    <option value="DeepSkyBlue">
-                        Deep Sky Blue
-                    </option>
+                <p>Select a shirt colour
+                    <select id="colourList" name="shirtColour" onchange="printShirt()">
+                        <option value="White">White</option>
+                        <option value="DeepSkyBlue">Deep Sky Blue</option>
+                        <option value="DarkSeaGreen">Dark Sea Green</option>
+                        <option value="DarkRed">Dark Red</option>
+                        <option value="LightYellow">Light Yellow</option>
+                    </select>
+                </p>
 
-                    <option value="DarkSeaGreen">
-                        Dark Sea Green
-                    </option>
+                <p>Select a shirt picture
+                    <select id="pictureList" name="shirtPic" onchange="printShirt()">
+                        <option value="null">Nothing</option>
+                        <option value="img/apple.png">Apple</option>
+                    </select>
+                </p>
 
-                    <option value="DarkRed">
-                        Dark Red
-                    </option>
+                <p>Text on shirt
+                    <input id="shirtTextBox" maxlength="30" name="shirtText" onkeypress="printShirt()" onkeyup="printShirt()" type="text" value="Harrys Shirt">
+                </p>
 
-                    <option value="LightYellow">
-                        Light Yellow
-                    </option>
-                </select></p>
+                <p>Font
+                    <select id="fontList" name="shirtFont" onchange="printShirt()">
+                        <option value="arial">Arial</option>
+                        <option value="courier">Courier</option>
+                        <option value="verdana">Verdana</option>
+                    </select>
 
-                <p>Select a shirt picture: <select id="pictureList" name=
-                "shirtPic" onchange="printShirt()">
-                    <option value="null">
-                        Nothing
-                    </option>
+                    Font Colour
+                        <select id="fontColourList" name="shirtFontColour" onchange="printShirt()">
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                        <option value="green">Green</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                    </select>
+                </p>
 
-                    <option value="img/apple.png">
-                        Apple
-                    </option>
-                </select></p>
-
-                <p>Text on shirt: <input id="shirtTextBox" maxlength="30" name=
-                "shirtText" onkeypress="printShirt()" onkeyup="printShirt()"
-                type="text" value="Harrys Shirt"></p>
-
-                <p>Font: <select id="fontList" name="shirtFont" onchange=
-                "printShirt()">
-                    <option value="arial">
-                        Arial
-                    </option>
-
-                    <option value="courier">
-                        Courier
-                    </option>
-
-                    <option value="verdana">
-                        Verdana
-                    </option>
-                </select> Font Colour: <select id="fontColourList" name=
-                "shirtFontColour" onchange="printShirt()">
-                    <option value="black">
-                        Black
-                    </option>
-
-                    <option value="white">
-                        White
-                    </option>
-
-                    <option value="green">
-                        Green
-                    </option>
-
-                    <option value="red">
-                        Red
-                    </option>
-
-                    <option value="blue">
-                        Blue
-                    </option>
-                </select></p>
-
-                <p>Font Size: <select id="fontSizeList" name="shirtFontSize"
-                onchange="printShirt()">
-                    <option value="15">
-                        Size 15
-                    </option>
-
-                    <option value="20">
-                        Size 20
-                    </option>
-
-                    <option value="25">
-                        Size 25
-                    </option>
-                </select></p>
+                <p>Font Size
+                    <select id="fontSizeList" name="shirtFontSize" onchange="printShirt()">
+                        <option value="15">Size 15</option>
+                        <option value="20">Size 20</option>
+                        <option value="25">Size 25</option>
+                    </select>
+                </p>
 
                 <table border="1" summary="Quantity">
                     <tr>
                         <th>Size</th>
-
                         <th>Quantity</th>
                     </tr>
 
                     <tr>
                         <td>Small</td>
 
-                        <td><input id="smallQuan" maxlength="3" name=
-                        "smallQuan" onblur="value=validateQuan(value);" type=
-                        "text" value="0"></td>
+                        <td>
+                            <input id="smallQuan" maxlength="3" name="smallQuan" onblur="value=validateQuan(value);" type="text" value="0">
+                        </td>
                     </tr>
 
                     <tr>
                         <td>Medium</td>
 
-                        <td><input id="mediumQuan" maxlength="3" name=
-                        "mediumQuan" onblur="value=validateQuan(value);" type=
-                        "text" value="0"></td>
+                        <td>
+                            <input id="mediumQuan" maxlength="3" name="mediumQuan" onblur="value=validateQuan(value);" type="text" value="0">
+                        </td>
                     </tr>
 
                     <tr>
                         <td>Large</td>
-
-                        <td><input id="largeQuan" maxlength="3" name=
-                        "largeQuan" onblur="value=validateQuan(value);" type=
-                        "text" value="0"></td>
+                        <td>
+                            <input id="largeQuan" maxlength="3" name="largeQuan" onblur="value=validateQuan(value);" type="text" value="0">
+                        </td>
                     </tr>
 
                     <tr>
                         <td>Very Large</td>
-
-                        <td><input id="vlargeQuan" maxlength="3" name=
-                        "vlargeQuan" onblur="value=validateQuan(value);" type=
-                        "text" value="0"></td>
+                        <td>
+                            <input id="vlargeQuan" maxlength="3" name="vlargeQuan" onblur="value=validateQuan(value);" type="text" value="0">
+                        </td>
                     </tr>
                 </table>
 
                 <table border="0" summary="Contact details">
                     <tr>
                         <th></th>
-
                         <th>Address</th>
                     </tr>
 
                     <tr>
                         <td>Name</td>
-
-                        <td><input id="nameBox" name="nameBox" type="text"
-                        value=""></td>
+                        <td>
+                            <input id="nameBox" name="nameBox" type="text" value="">
+                        </td>
                     </tr>
 
                     <tr>
-                        <td>Line 1:</td>
-
-                        <td><input id="l1Box" name="l1Box" type="text" value=
-                        ""></td>
+                        <td>Line 1</td>
+                        <td>
+                            <input id="l1Box" name="l1Box" type="text" value="">
+                        </td>
                     </tr>
 
                     <tr>
-                        <td>Line 2:</td>
-
-                        <td><input id="l2Box" name="l2Box" type="text" value=
-                        ""></td>
+                        <td>Line 2</td>
+                        <td>
+                            <input id="l2Box" name="l2Box" type="text" value="">
+                        </td>
                     </tr>
 
                     <tr>
-                        <td>County:</td>
+                        <td>County</td>
 
-                        <td><input id="county" name="county" type="text" value=
-                        ""></td>
+                        <td>
+                            <input id="county" name="county" type="text" value="">
+                        </td>
                     </tr>
 
                     <tr>
-                        <td>Post Code:</td>
+                        <td>Post Code</td>
 
-                        <td><input id="postCode" name="postCode" type="text"
-                        value=""></td>
+                        <td>
+                            <input id="postCode" name="postCode" type="text" value="">
+                        </td>
                     </tr>
                 </table>
 
-                <p><input onclick="return validateOrder();" type="submit"
-                value="Place order"></p>
+                <p>
+                    <input onclick="return validateOrder();" type="submit" value="Place order">
+                </p>
             </form>
         </div>
 
-        <div id="footer">
-            <br>
-            4188335 - hxm02u<br>
-            <a>Harry Mumford-Turner</a>
-        </div>
+        <div id="footer">4188335 hxm02u<a target="_blank" href="http://www.harrymt.com">Harry Mumford Turner</a></div>
     </div>
 </body>
 </html>
