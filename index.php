@@ -2,25 +2,16 @@
 
 <html>
 <head>
-   <meta charset="utf-8">
-    <meta name="description" content="Create your own T-Shirt design">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>T shirt design</title>
-
-    <link href="css/main.css" rel="stylesheet">
-    <script src="js/main.min.js"></script>
+    <?php @include 'templates/head.php' ?>
 </head>
 <body>
-    <div id="container">
-        <div id="header">
-            <h3>Amazing Tees</h3>
-        </div>
+    <div class="wrapper">
+        <header>
+            <h3>Amazing a Tees</h3>
+        </header>
 
         <div id="rightcolumn">
-            <img alt="T-Shirt" class="tShirt" id="tShirt" name="tShirt" src=
-            "img/tShirt.png"> <img alt="" class="pic" height="80" id="pic" name=
-            "pic" src="null" width="60">
+            <img alt="T-Shirt" class="tShirt" id="tShirt" name="tShirt" src="img/tShirt.png"> <img alt="" class="pic" height="80" id="pic" name="pic" src="null" width="60">
 
             <table summary="Shirt text">
                 <tr>
@@ -167,7 +158,7 @@
             </form>
         </div>
 
-        <div id="footer">4188335 hxm02u<a target="_blank" href="http://www.harrymt.com">Harry Mumford Turner</a></div>
+        <?php @include 'templates/footer.php' ?>
     </div>
 </body>
 </html>

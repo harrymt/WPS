@@ -34,35 +34,36 @@ $postCode = urlencode($_GET['postCode']);
   <script type="text/javascript">
 
   function makeOrder() {
-        <?php
+    <?php
 
-            $csvArray['shirtColour'][]     = $shirtColour;
-            $csvArray['shirtPic'][]        = $shirtPic;
-            $csvArray['shirtText'][]       = $shirtText;
-            $csvArray['shirtFont'][]       = $shirtFont;
-            $csvArray['shirtFontColour'][] = $shirtFontColour;
-            $csvArray['shirtFontSize'][]   = $shirtFontSize;
-            $csvArray['smallQuan'][]       = $smallQuan;
-            $csvArray['mediumQuan'][]      = $mediumQuan;
-            $csvArray['largeQuan'][]       = $largeQuan;
-            $csvArray['vlargeQuan'][]      = $vlargeQuan;
-            $csvArray['nameBox'][]         = $nameBox;
-            $csvArray['l1Box'][]           = $l1Box;
-            $csvArray['l2Box'][]           = $l2Box;
-            $csvArray['county'][]          = $county;
-            $csvArray['postCode'][]        = $postCode;
+        $csvArray['shirtColour'][]     = $shirtColour;
+        $csvArray['shirtPic'][]        = $shirtPic;
+        $csvArray['shirtText'][]       = $shirtText;
+        $csvArray['shirtFont'][]       = $shirtFont;
+        $csvArray['shirtFontColour'][] = $shirtFontColour;
+        $csvArray['shirtFontSize'][]   = $shirtFontSize;
+        $csvArray['smallQuan'][]       = $smallQuan;
+        $csvArray['mediumQuan'][]      = $mediumQuan;
+        $csvArray['largeQuan'][]       = $largeQuan;
+        $csvArray['vlargeQuan'][]      = $vlargeQuan;
+        $csvArray['nameBox'][]         = $nameBox;
+        $csvArray['l1Box'][]           = $l1Box;
+        $csvArray['l2Box'][]           = $l2Box;
+        $csvArray['county'][]          = $county;
+        $csvArray['postCode'][]        = $postCode;
 
-            // append to the csv file.
-            $fp = fopen('order.csv', 'a') or die("can't open file");
+        // append to the csv file.
+        $fp = fopen('order.csv', 'a') or die("can't open file");
 
-            foreach ($csvArray as $fields) {
-                fputcsv($fp, $fields);
-            }
+        foreach ($csvArray as $fields) {
+            fputcsv($fp, $fields);
+        }
 
 
 
-            fclose($fp);
-        ?>
+        fclose($fp);
+    ?>
+
      alert("Order completed!");
     }
 
@@ -70,9 +71,9 @@ $postCode = urlencode($_GET['postCode']);
 </head>
 <body>
   <div id="container">
-    <div id="header">
-      <h3>Amazing Tees</h3>
-    </div>
+    <header>
+        <h3>Amazing a Tees</h3>
+    </header>
     <div id="leftcolumn">
         <form action="index.html">
             <p>

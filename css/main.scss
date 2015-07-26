@@ -1,88 +1,86 @@
-/* The css for the t shirt site website 
-*  Left column which holds the boxes to change the type
-*  of the t shirt. Right column holds the t shirt picture.
-*/
+//
+// The SCSS for the t shirt site website.
+// Left column which holds the boxes to change the type
+// of the t shirt. Right column holds the t shirt picture.
+//
+
+$colour-background: #e0e0f0;
+$colour-text: #fff; // TODO unused
+$colour-panel: #000; // TODO unused
+
 body {
-/* The very background */
-/* Colour outside the frame */
-    background-color: #E0E0F0;
-    font-family: Arial;
-    font-size: 15px;
+  background-color: $colour-background;
+  font-family: Arial;
+  font-size: 15px;
 }
 
-#container {
-/* This contains every item */
-/* The size of the frame inside the webpage */
-    margin: auto;
-    width: 80%;
-    min-width: 1000px;
-/* Default colour of everything in the webpage */
-    color: #000;
-    background-color: #FFF;
-    border: 2px double #000;
+.wrapper {
+  background-color: #fff;
+  border: 2px double #000;
+  color: #000;
+  margin: auto;
+  min-width: 1000px;
+  width: 80%;
 }
 
-#header {
-/* The top of the frame */
-/* The border on the bottom of the header */
-    border-bottom: 2px double #000;
-    text-align: center;
-    color: #000;
+header {
+  border-bottom: 2px double #000;
+  color: #000;
+  text-align: center;
 }
 
-#leftcolumn {
-/* This is the left column containing buttons 
+/* This is the left column containing buttons
   and colour altering properties */
-    padding: 10px;
-    float: left;
-    position: relative;
+#leftcolumn {
+  float: left;
+  padding: 10px;
+  position: relative;
 }
 
-#rightcolumn {
 /* Right hand side, with the t shirt picture */
-    padding: 10px;
-    float: right;
-    position: relative;
+#rightcolumn {
+  float: right;
+  padding: 10px;
+  position: relative;
 }
 
-#footer {
-/* Footer of the page */
-    border-top: 2px double #000;
-    padding: 20px 0;
-    background-color: #E038AD;
-    color: #000;
-    font-size: xx-small;
-    font-style: italic;
-    text-align: center;
-    clear: both;
+footer {
+  background-color: #e038ad;
+  border-top: 2px double #000;
+  clear: both;
+  color: #000;
+  font-size: xx-small;
+  font-style: italic;
+  padding: 20px 0;
+  text-align: center;
 }
 
-.shirtText {
 /* Text on the shirt */
 /* Makes spaces in the text box go into normal spaces
-    as the user perceives them */
-    white-space: pre;
-    position: relative;
-    height: 20px;
-    width: 120px;
-    left: 150px;
-    bottom: 220px;
-    word-wrap: break-word;
-    text-align: center;
+  as the user perceives them */
+.shirtText {
+  bottom: 220px;
+  height: 20px;
+  left: 150px;
+  position: relative;
+  text-align: center;
+  white-space: pre;
+  width: 120px;
+  word-wrap: break-word;
 }
 
-.pic {
 /* The picture placed on the shirt e.g. apple */
-    position: absolute;
-    top: 115px;
-    right: 195px;
-    visibility: hidden;
+.pic {
+  position: absolute;
+  right: 195px;
+  top: 115px;
+  visibility: hidden;
 }
 
-.tShirt {
 /* T shirt picture  */
-    position: relative;
-    width: 350px;
-    height: 300px;
-    margin: 40px;
+.tShirt {
+  height: 300px;
+  margin: 40px;
+  position: relative;
+  width: 350px;
 }
