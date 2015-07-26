@@ -11,8 +11,8 @@
         </header>
 
         <section class="right">
-            <img height="250px;" width="300px;" class="tShirt" id="js-tShirt" name="tShirt" style="background:url(img/tShirt.png)">
-            <img class="pic" height="80" id="pic" name="pic" src="null" width="60">
+            <img class="tShirt" id="js-tShirt" src="img/tee-outline.png" height="250" width="300">
+            <img class="pic" id="pic" src="null" height="80" width="60">
             <p class="shirttext" id="js-shirt-text">Harrys Shirt</p>
         </section>
 
@@ -22,7 +22,7 @@
             <div class="options">
                 <label for="shirtColour">Select a shirt colour</label>
                 <select id="js-colour-list" name="shirtColour" onchange="printShirt()">
-                    <option value="White">White</option>
+                    <option value="White" selected>White</option>
                     <option value="DeepSkyBlue">Deep Sky Blue</option>
                     <option value="DarkSeaGreen">Dark Sea Green</option>
                     <option value="DarkRed">Dark Red</option>
@@ -62,7 +62,7 @@
                 </select>
             </div>
             <div class="order">
-                <table border="0" summary="Contact details">
+                <table>
                     <tr>
                         <th></th>
                         <th>Address</th>
@@ -105,14 +105,13 @@
                     </tr>
                 </table>
 
-                <table summary="Quantity">
+                <table>
                     <tr>
                         <th></th><th>Quantity</th>
                     </tr>
 
                     <tr>
                         <td>Small</td>
-
                         <td>
                             <input id="smallQuan" maxlength="3" name="smallQuan" onblur="value=validateQuan(value);" type="text" value="1">
                         </td>
@@ -120,7 +119,6 @@
 
                     <tr>
                         <td>Medium</td>
-
                         <td>
                             <input id="mediumQuan" maxlength="3" name="mediumQuan" onblur="value=validateQuan(value);" type="text" value="0">
                         </td>
@@ -140,8 +138,6 @@
                         </td>
                     </tr>
                 </table>
-
-
 
                 <input class="button button-success" onclick="return validateOrder();" type="submit" value="Place order">
             </div>
