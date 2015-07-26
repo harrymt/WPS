@@ -1,37 +1,34 @@
 <!doctype html>
-
-<?php
-// Shirt characteristics
-$shirtColour     = $_GET['shirtColour'];
-$shirtPic        = $_GET['shirtPic'];
-$shirtText       = urlencode($_GET['shirtText']);
-$shirtFont       = $_GET['shirtFont'];
-$shirtFontColour = $_GET['shirtFontColour'];
-$shirtFontSize   = $_GET['shirtFontSize'];
-
-// Shirt quantity
-$smallQuan  = $_GET['smallQuan'];
-$mediumQuan = $_GET['mediumQuan'];
-$largeQuan  = $_GET['largeQuan'];
-$vlargeQuan = $_GET['vlargeQuan'];
-
-// Address
-$nameBox  = urlencode($_GET['nameBox']);
-$l1Box    = urlencode($_GET['l1Box']);
-$l2Box    = urlencode($_GET['l2Box']);
-$county   = urlencode($_GET['county']);
-$postCode = urlencode($_GET['postCode']);
-
-?>
-
 <html>
 <head>
-  <meta php-equiv="Content-Type" content="ext/php; charset=us-ascii">
-
-  <title>T shirt design</title>
-  <link rel="stylesheet" type="text/css" href="css/shop.css">
+    <?php @include 'templates/head.php' ?>
 
   <script type="text/javascript">
+
+
+    <?php
+    // Shirt characteristics
+    $shirtColour     = $_GET['shirtColour'];
+    $shirtPic        = $_GET['shirtPic'];
+    $shirtText       = urlencode($_GET['shirtText']);
+    $shirtFont       = $_GET['shirtFont'];
+    $shirtFontColour = $_GET['shirtFontColour'];
+    $shirtFontSize   = $_GET['shirtFontSize'];
+
+    // Shirt quantity
+    $smallQuan  = $_GET['smallQuan'];
+    $mediumQuan = $_GET['mediumQuan'];
+    $largeQuan  = $_GET['largeQuan'];
+    $vlargeQuan = $_GET['vlargeQuan'];
+
+    // Address
+    $nameBox  = urlencode($_GET['nameBox']);
+    $l1Box    = urlencode($_GET['l1Box']);
+    $l2Box    = urlencode($_GET['l2Box']);
+    $county   = urlencode($_GET['county']);
+    $postCode = urlencode($_GET['postCode']);
+
+    ?>
 
   function makeOrder() {
     <?php
@@ -197,10 +194,7 @@ $postCode = urlencode($_GET['postCode']);
                 </p>
             </div>
         </form>
-    <div id="footer">
-      <br>4188335 - hxm02u<br>
-      <a>Harry Mumford-Turner</a>
-    </div>
+    <?php @include 'templates/footer.php' ?>
   </div>
 </body>
 </html>

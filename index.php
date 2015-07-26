@@ -81,7 +81,7 @@
                         <td>Small</td>
 
                         <td>
-                            <input id="smallQuan" maxlength="3" name="smallQuan" onblur="value=validateQuan(value);" type="text" value="0">
+                            <input id="smallQuan" maxlength="3" name="smallQuan" onblur="value=validateQuan(value);" type="text" value="1">
                         </td>
                     </tr>
 
@@ -117,21 +117,21 @@
                     <tr>
                         <td>Name</td>
                         <td>
-                            <input id="nameBox" name="nameBox" type="text" value="">
+                            <input id="nameBox" name="nameBox" type="text" value="Test">
                         </td>
                     </tr>
 
                     <tr>
                         <td>Line 1</td>
                         <td>
-                            <input id="l1Box" name="l1Box" type="text" value="">
+                            <input id="l1Box" name="l1Box" type="text" value="Test">
                         </td>
                     </tr>
 
                     <tr>
                         <td>Line 2</td>
                         <td>
-                            <input id="l2Box" name="l2Box" type="text" value="">
+                            <input id="l2Box" name="l2Box" type="text" value="test">
                         </td>
                     </tr>
 
@@ -139,15 +139,14 @@
                         <td>County</td>
 
                         <td>
-                            <input id="county" name="county" type="text" value="">
+                            <input id="county" name="county" type="text" value="test">
                         </td>
                     </tr>
 
                     <tr>
                         <td>Post Code</td>
-
                         <td>
-                            <input id="postCode" name="postCode" type="text" value="">
+                            <input id="postCode" name="postCode" type="text" value="test">
                         </td>
                     </tr>
                 </table>
