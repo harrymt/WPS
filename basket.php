@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD PHP 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!doctype html>
+
 <?php
 // Shirt characteristics
 $shirtColour     = $_GET['shirtColour'];
@@ -74,7 +74,7 @@ $postCode = urlencode($_GET['postCode']);
       <h3>Amazing Tees</h3>
     </div>
     <div id="leftcolumn">
-        <form action="index.html" >
+        <form action="index.html">
             <p>
                 <table border="1" summary="Order quantity">
                     <tr>
@@ -87,7 +87,7 @@ $postCode = urlencode($_GET['postCode']);
                         <td>
                             <input id="smallQuan" type="text" disabled="disabled" name="smallQuan" value=<?php echo $smallQuan?>>
                         </td>
-                        <td> 
+                        <td>
                             <input id="sPrice" type="text" disabled="disabled" name="sPrice" value=<?php echo ($smallQuan*14)?>>
                         </td>
                     </tr>
@@ -96,7 +96,7 @@ $postCode = urlencode($_GET['postCode']);
                         <td>
                             <input id="mediumQuan" type="text" disabled="disabled" name="mediumQuan" value=<?php echo $mediumQuan?>>
                         </td>
-                        <td> 
+                        <td>
                             <input id="mPrice" type="text" disabled="disabled" name="mPrice" value=<?php echo ($mediumQuan*15)?>>
                         </td>
                     </tr>
@@ -105,7 +105,7 @@ $postCode = urlencode($_GET['postCode']);
                         <td>
                             <input id="largeQuan" type="text" disabled="disabled" name="largeQuan" value=<?php echo $largeQuan?>>
                         </td>
-                        <td> 
+                        <td>
                             <input id="lPrice" type="text" disabled="disabled" name="lPrice" value=<?php echo ($largeQuan*16)?>>
                         </td>
                     </tr>
@@ -114,7 +114,7 @@ $postCode = urlencode($_GET['postCode']);
                         <td>
                             <input id="vlargeQuan" type="text" disabled="disabled" name="vlargeQuan" value=<?php echo $vlargeQuan?>>
                         </td>
-                        <td> 
+                        <td>
                             <input id="vlPrice" type="text" disabled="disabled" name="vlPrice" value=<?php echo ($vlargeQuan*17)?>>
                         </td>
                     </tr>
