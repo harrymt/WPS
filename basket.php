@@ -2,24 +2,21 @@
 <html>
 <head>
     <?php @include 'templates/head.php' ?>
+</head>
+<body>
 
-  <script type="text/javascript">
+<?php
 
-
-    <?php
     // Shirt characteristics
-    $shirtColour     = $_GET['shirtColour'];
-    $shirtPic        = $_GET['shirtPic'];
-    $shirtText       = urlencode($_GET['shirtText']);
-    $shirtFont       = $_GET['shirtFont'];
-    $shirtFontColour = $_GET['shirtFontColour'];
-    $shirtFontSize   = $_GET['shirtFontSize'];
+    $shirtColour = urlencode($_GET['shirtColour']);
+    $shirtPic    = urlencode($_GET['shirtPic']);
+    $shirtText   = urlencode($_GET['shirtText']);
 
     // Shirt quantity
-    $smallQuan  = $_GET['smallQuan'];
-    $mediumQuan = $_GET['mediumQuan'];
-    $largeQuan  = $_GET['largeQuan'];
-    $vlargeQuan = $_GET['vlargeQuan'];
+    $smallQuan  = urlencode($_GET['smallQuan']);
+    $mediumQuan = urlencode($_GET['mediumQuan']);
+    $largeQuan  = urlencode($_GET['largeQuan']);
+    $vlargeQuan = urlencode($_GET['vlargeQuan']);
 
     // Address
     $nameBox  = urlencode($_GET['nameBox']);
@@ -28,135 +25,93 @@
     $county   = urlencode($_GET['county']);
     $postCode = urlencode($_GET['postCode']);
 
-    ?>
+?>
 
-  function makeOrder() {
-    <?php
-
-        $csvArray['shirtColour'][]     = $shirtColour;
-        $csvArray['shirtPic'][]        = $shirtPic;
-        $csvArray['shirtText'][]       = $shirtText;
-        $csvArray['shirtFont'][]       = $shirtFont;
-        $csvArray['shirtFontColour'][] = $shirtFontColour;
-        $csvArray['shirtFontSize'][]   = $shirtFontSize;
-        $csvArray['smallQuan'][]       = $smallQuan;
-        $csvArray['mediumQuan'][]      = $mediumQuan;
-        $csvArray['largeQuan'][]       = $largeQuan;
-        $csvArray['vlargeQuan'][]      = $vlargeQuan;
-        $csvArray['nameBox'][]         = $nameBox;
-        $csvArray['l1Box'][]           = $l1Box;
-        $csvArray['l2Box'][]           = $l2Box;
-        $csvArray['county'][]          = $county;
-        $csvArray['postCode'][]        = $postCode;
-
-        // append to the csv file.
-        $fp = fopen('order.csv', 'a') or die("can't open file");
-
-        foreach ($csvArray as $fields) {
-            fputcsv($fp, $fields);
-        }
-
-
-
-        fclose($fp);
-    ?>
-
-     alert("Order completed!");
-    }
-
-  </script>
-</head>
-<body>
 <div class="wrapper">
-    <header>
-        <h3>Amazing Tees</h3>
-    </header>
+    <?php @include 'templates/header.php' ?>
 
     <div id="leftcolumn">
-        <form action="index.php">
-            <p>
-                <table border="1" summary="Order quantity">
+        <form action="makeorder.php">
+            <table>
+                <tr>
+                    <th> Size </th>
+                    <th> Quantity </th>
+                    <th> Price</th>
+                </tr>
+                <tr>
+                    <td>Small</td>
+                    <td>
+                        <input id="smallQuan" type="text" disabled="disabled" name="smallQuan" value=<?php echo $smallQuan?>>
+                    </td>
+                    <td>
+                        <input id="sPrice" type="text" disabled="disabled" name="sPrice" value=<?php echo ($smallQuan*14)?>>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td>
+                        <input id="mediumQuan" type="text" disabled="disabled" name="mediumQuan" value=<?php echo $mediumQuan?>>
+                    </td>
+                    <td>
+                        <input id="mPrice" type="text" disabled="disabled" name="mPrice" value=<?php echo ($mediumQuan*15)?>>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Large</td>
+                    <td>
+                        <input id="largeQuan" type="text" disabled="disabled" name="largeQuan" value=<?php echo $largeQuan?>>
+                    </td>
+                    <td>
+                        <input id="lPrice" type="text" disabled="disabled" name="lPrice" value=<?php echo ($largeQuan*16)?>>
+                    </td>
+                </tr>
                     <tr>
-                        <th> Size </th>
-                        <th> Quantity </th>
-                        <th> Price</th>
+                    <td>Very Large</td>
+                    <td>
+                        <input id="vlargeQuan" type="text" disabled="disabled" name="vlargeQuan" value=<?php echo $vlargeQuan?>>
+                    </td>
+                    <td>
+                        <input id="vlPrice" type="text" disabled="disabled" name="vlPrice" value=<?php echo ($vlargeQuan*17)?>>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th> </th>
+                    <th> Address </th>
+                </tr>
+                    <tr>
+                        <td>Name </td>
+                        <td>
+                            <input id="nameBox" type="text" name="nameBox" disabled="disabled" value=<?php echo $nameBox?>>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Small</td>
+                        <td>Line 1:</td>
                         <td>
-                            <input id="smallQuan" type="text" disabled="disabled" name="smallQuan" value=<?php echo $smallQuan?>>
-                        </td>
-                        <td>
-                            <input id="sPrice" type="text" disabled="disabled" name="sPrice" value=<?php echo ($smallQuan*14)?>>
+                            <input id="l1Box" type="text" name="l2Box" disabled="disabled" value=<?php echo $l1Box?>>
                         </td>
                     </tr>
                     <tr>
-                        <td>Medium</td>
+                        <td>Line 2:</td>
                         <td>
-                            <input id="mediumQuan" type="text" disabled="disabled" name="mediumQuan" value=<?php echo $mediumQuan?>>
-                        </td>
-                        <td>
-                            <input id="mPrice" type="text" disabled="disabled" name="mPrice" value=<?php echo ($mediumQuan*15)?>>
+                            <input id="l2Box" type="text" name="l2Box" disabled="disabled" value=<?php echo $l2Box?>>
                         </td>
                     </tr>
                     <tr>
-                        <td>Large</td>
+                        <td>County:</td>
                         <td>
-                            <input id="largeQuan" type="text" disabled="disabled" name="largeQuan" value=<?php echo $largeQuan?>>
-                        </td>
-                        <td>
-                            <input id="lPrice" type="text" disabled="disabled" name="lPrice" value=<?php echo ($largeQuan*16)?>>
+                            <input id="county" type="text" name="county" disabled="disabled" value=<?php echo $county?>>
                         </td>
                     </tr>
-                        <tr>
-                        <td>Very Large</td>
+                    <tr>
+                        <td>Post Code: </td>
                         <td>
-                            <input id="vlargeQuan" type="text" disabled="disabled" name="vlargeQuan" value=<?php echo $vlargeQuan?>>
-                        </td>
-                        <td>
-                            <input id="vlPrice" type="text" disabled="disabled" name="vlPrice" value=<?php echo ($vlargeQuan*17)?>>
+                            <input id="postCode" type="text" name="postCode" disabled="disabled" value=<?php echo $postCode?>>
                         </td>
                     </tr>
                 </table>
-            </p>
-            <p>
-                <table border="0" summary="Contact details">
-                    <tr>
-                        <th> </th>
-                        <th> Address </th>
-                    </tr>
-                        <tr>
-                            <td>Name </td>
-                            <td>
-                                <input id="nameBox" type="text" name="nameBox" disabled="disabled" value=<?php echo $nameBox?>>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Line 1:</td>
-                            <td>
-                                <input id="l1Box" type="text" name="l2Box" disabled="disabled" value=<?php echo $l1Box?>>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Line 2:</td>
-                            <td>
-                                <input id="l2Box" type="text" name="l2Box" disabled="disabled" value=<?php echo $l2Box?>>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>County:</td>
-                            <td>
-                                <input id="county" type="text" name="county" disabled="disabled" value=<?php echo $county?>>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Post Code: </td>
-                            <td>
-                                <input id="postCode" type="text" name="postCode" disabled="disabled" value=<?php echo $postCode?>>
-                            </td>
-                        </tr>
-                    </table>
-                </p>
+
                 <p>
                     <input class="button" type="submit" value="back" onClick="window.history.back();">
                     <input class="button button-success" type="submit" value="Confirm order" onClick="makeOrder()">

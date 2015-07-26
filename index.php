@@ -6,9 +6,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>
-            <h3>Amazing Tees</h3>
-        </header>
+        <?php @include 'templates/header.php' ?>
 
         <section class="right">
             <img class="tShirt" id="js-tShirt" src="img/tee-outline.png" height="250" width="300">
