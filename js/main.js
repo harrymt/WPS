@@ -1,6 +1,6 @@
 function printShirt() {
     // Change the colour of the t-shirt
-    var colList = document.getElementById("colourList");
+    var colList = document.getElementById("js-colour-list");
 
     document.getElementById("js-tShirt").style.backgroundColor = colList.options[colList.selectedIndex].value;
 
@@ -12,7 +12,7 @@ function printShirt() {
         document.getElementById("pic").style.visibility = "hidden";
     }
     // Apply font text and colour
-    var shirtText = document.getElementById("shirtText");
+    var shirtText = document.getElementById("js-shirt-text");
     shirtText.innerHTML = document.getElementById("shirtTextBox").value;
     shirtText.style.color = document.getElementById("fontColourList").value;
     shirtText.style.font = document.getElementById("fontSizeList").value + "px " + document.getElementById("fontList").value;

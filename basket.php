@@ -158,7 +158,8 @@
                     </table>
                 </p>
                 <p>
-                    <input type="submit" value="Confirm order" onClick="makeOrder()">
+                    <input class="button" type="submit" value="back" onClick="window.history.back();">
+                    <input class="button button-success" type="submit" value="Confirm order" onClick="makeOrder()">
                     <input id="pSum" name="pSum" type="text" disabled="disabled" value=<?php echo (($smallQuan*14)+($mediumQuan*15)+($largeQuan*16)+($vlargeQuan*17))?>>
                 </p>
             </div>

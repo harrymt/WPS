@@ -4,10 +4,11 @@
 // of the t shirt. Right column holds the t shirt picture.
 //
 
-$colour-background: #fff;
-$colour-panel: #A5FFD6;
-$colour-banner: #84DCC6;
-$colour-text: #222;
+$colour-background: #eee;
+$colour-panel: #fefefe;
+$colour-banner: #6f5499;
+$colour-text: #111;
+$colour-text-header: #fff;
 
 .right {
   float: right;
@@ -17,6 +18,7 @@ body {
   background-color: $colour-background;
   font-family: Arial;
   font-size: 15px;
+  margin: 0;
 }
 
 .wrapper {
@@ -31,12 +33,12 @@ header,
 footer {
   background-color: $colour-banner;
   border: 2px double $colour-banner;
-  color: $colour-text;
+  color: $colour-text-header;
   text-align: center;
 }
 
 header {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 footer {
@@ -49,13 +51,11 @@ footer {
 /* Text on the shirt */
 /* Makes spaces in the text box go into normal spaces
   as the user perceives them */
-.shirtText {
+.shirttext {
   bottom: 220px;
-  height: 20px;
   left: 128px;
   position: relative;
   text-align: center;
-  white-space: pre;
   width: 120px;
   word-wrap: break-word;
 }
@@ -72,4 +72,76 @@ footer {
 .tShirt {
   margin: 40px;
   position: relative;
+}
+
+section {
+  padding: 50px;
+}
+
+.options {
+  width: 450px;
+}
+
+.order {
+  width: 100%;
+  display: inline-block;
+
+  table {
+    line-height: 20px;
+    margin: 3px;
+    padding: 10px;
+    display: inline-flex;
+    width: 40%;
+  }
+
+  .button {
+    margin-top: 30px;
+    width: 40%;
+    float: right;
+  }
+}
+
+form {
+
+  select,
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 32px;
+    padding: 7px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+}
+
+
+table th {
+  padding-bottom: 10px;
+}
+
+
+.button {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #555;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+.button-success {
+  background-color: #5cb85c;
+  border: 1px solid #5cb85d;
+  color: #fff;
+}
+
+.button-success:hover {
+  background-color: #449d44;
 }

@@ -4,6 +4,5 @@
 ?>
 
 <footer>
-    4188335 hxm02u
-    <a target="_blank" href="http://www.harrymt.com">Harry Mumford Turner</a>
+    4188335 <a target="_blank" href="http://www.harrymt.com">Harry Mumford Turner</a> hxm02u
 </footer>

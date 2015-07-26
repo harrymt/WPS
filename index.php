@@ -13,102 +13,55 @@
         <section class="right">
             <img height="250px;" width="300px;" class="tShirt" id="js-tShirt" name="tShirt" style="background:url(img/tShirt.png)">
             <img class="pic" height="80" id="pic" name="pic" src="null" width="60">
-
-            <table summary="Shirt text">
-                <tr>
-                    <td>
-                        <p class="shirtText" id="shirtText">Harrys Shirt</p>
-                    </td>
-                </tr>
-            </table>
+            <p class="shirttext" id="js-shirt-text">Harrys Shirt</p>
         </section>
 
         <section>
             <form action="basket.php" method="get">
 
-                <p>Select a shirt colour
-                    <select id="colourList" name="shirtColour" onchange="printShirt()">
-                        <option value="White">White</option>
-                        <option value="DeepSkyBlue">Deep Sky Blue</option>
-                        <option value="DarkSeaGreen">Dark Sea Green</option>
-                        <option value="DarkRed">Dark Red</option>
-                        <option value="LightYellow">Light Yellow</option>
-                    </select>
-                </p>
+            <div class="options">
+                <label for="shirtColour">Select a shirt colour</label>
+                <select id="js-colour-list" name="shirtColour" onchange="printShirt()">
+                    <option value="White">White</option>
+                    <option value="DeepSkyBlue">Deep Sky Blue</option>
+                    <option value="DarkSeaGreen">Dark Sea Green</option>
+                    <option value="DarkRed">Dark Red</option>
+                    <option value="LightYellow">Light Yellow</option>
+                </select>
 
-                <p>Select a shirt picture
-                    <select id="pictureList" name="shirtPic" onchange="printShirt()">
-                        <option value="null">Nothing</option>
-                        <option value="img/apple.png">Apple</option>
-                    </select>
-                </p>
+                <label for="shirtPic">Select a shirt picture</label>
+                <select id="pictureList" name="shirtPic" onchange="printShirt()">
+                    <option value="null">Nothing</option>
+                    <option value="img/apple.png">Apple</option>
+                </select>
 
-                <p>Text on shirt
-                    <input id="shirtTextBox" maxlength="30" name="shirtText" onkeypress="printShirt()" onkeyup="printShirt()" type="text" value="Harrys Shirt">
-                </p>
+                <label for="shirtText">Text on shirt</label>
+                <input id="shirtTextBox" maxlength="30" name="shirtText" onkeypress="printShirt()" onkeyup="printShirt()" type="text" value="Harrys Shirt">
 
-                <p>Font
-                    <select id="fontList" name="shirtFont" onchange="printShirt()">
-                        <option value="arial">Arial</option>
-                        <option value="courier">Courier</option>
-                        <option value="verdana">Verdana</option>
-                    </select>
+                <label for="shirtFont">Font</label>
+                <select id="fontList" name="shirtFont" onchange="printShirt()">
+                    <option value="arial">Arial</option>
+                    <option value="courier">Courier</option>
+                    <option value="verdana">Verdana</option>
+                </select>
 
-                    Font Colour
-                        <select id="fontColourList" name="shirtFontColour" onchange="printShirt()">
-                        <option value="black">Black</option>
-                        <option value="white">White</option>
-                        <option value="green">Green</option>
-                        <option value="red">Red</option>
-                        <option value="blue">Blue</option>
-                    </select>
-                </p>
+                <label for="shirtFontColour">Font Colour</label>
+                    <select id="fontColourList" name="shirtFontColour" onchange="printShirt()">
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                    <option value="green">Green</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                </select>
 
-                <p>Font Size
-                    <select id="fontSizeList" name="shirtFontSize" onchange="printShirt()">
-                        <option value="15">Size 15</option>
-                        <option value="20">Size 20</option>
-                        <option value="25">Size 25</option>
-                    </select>
-                </p>
-
-                <table border="1" summary="Quantity">
-                    <tr>
-                        <th>Size</th>
-                        <th>Quantity</th>
-                    </tr>
-
-                    <tr>
-                        <td>Small</td>
-
-                        <td>
-                            <input id="smallQuan" maxlength="3" name="smallQuan" onblur="value=validateQuan(value);" type="text" value="1">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Medium</td>
-
-                        <td>
-                            <input id="mediumQuan" maxlength="3" name="mediumQuan" onblur="value=validateQuan(value);" type="text" value="0">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Large</td>
-                        <td>
-                            <input id="largeQuan" maxlength="3" name="largeQuan" onblur="value=validateQuan(value);" type="text" value="0">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Very Large</td>
-                        <td>
-                            <input id="vlargeQuan" maxlength="3" name="vlargeQuan" onblur="value=validateQuan(value);" type="text" value="0">
-                        </td>
-                    </tr>
-                </table>
-
+                <label for="shirtFontSize">Font Size</label>
+                <select id="fontSizeList" name="shirtFontSize" onchange="printShirt()">
+                    <option value="15">Size 15</option>
+                    <option value="20">Size 20</option>
+                    <option value="25">Size 25</option>
+                </select>
+            </div>
+            <div class="order">
                 <table border="0" summary="Contact details">
                     <tr>
                         <th></th>
@@ -152,9 +105,46 @@
                     </tr>
                 </table>
 
-                <p>
-                    <input onclick="return validateOrder();" type="submit" value="Place order">
-                </p>
+                <table summary="Quantity">
+                    <tr>
+                        <th></th><th>Quantity</th>
+                    </tr>
+
+                    <tr>
+                        <td>Small</td>
+
+                        <td>
+                            <input id="smallQuan" maxlength="3" name="smallQuan" onblur="value=validateQuan(value);" type="text" value="1">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Medium</td>
+
+                        <td>
+                            <input id="mediumQuan" maxlength="3" name="mediumQuan" onblur="value=validateQuan(value);" type="text" value="0">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Large</td>
+                        <td>
+                            <input id="largeQuan" maxlength="3" name="largeQuan" onblur="value=validateQuan(value);" type="text" value="0">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Very Large</td>
+                        <td>
+                            <input id="vlargeQuan" maxlength="3" name="vlargeQuan" onblur="value=validateQuan(value);" type="text" value="0">
+                        </td>
+                    </tr>
+                </table>
+
+
+
+                <input class="button button-success" onclick="return validateOrder();" type="submit" value="Place order">
+            </div>
             </form>
         </section>
 
